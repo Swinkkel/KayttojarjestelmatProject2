@@ -32,7 +32,7 @@ int main(int argc, char*argv[]) {
 				count++;
 				continue;
 			}
-			
+
 			// If we had previous character but current is different then write previous character to file. 
 			// Format is number of characters as integer and then character as char.
 			if (prev >= 0) {
@@ -44,10 +44,10 @@ int main(int argc, char*argv[]) {
 			prev = character;
 			count = 1;
 		}
-	
+
 		fclose(file_ptr);
 	}
-	
+
 	// If we have previous defined then write it to file.
 	if (prev >= 0) {
 		fwrite(&count, sizeof(int), 1, stdout);

@@ -12,10 +12,6 @@ int main(int argc, char*argv[]) {
 		return 1;
 	}
 
-	int prev = -1;
-	int character = -1;
-	unsigned int count = 1;
-
 	for (int i=1;i<argc;++i) {
 		// Open file in read mode.
 		FILE* file_ptr = fopen(argv[i], "r");
@@ -31,11 +27,11 @@ int main(int argc, char*argv[]) {
 			if (read == 0) {
 				continue;
 			}
-		
+
 			// Read character from stream.
 			char ch;
 			read = fread(&ch, sizeof(char), 1, file_ptr);
-			if (read == 0) {		
+			if (read == 0) {
 				continue;
 			}
 
@@ -47,6 +43,6 @@ int main(int argc, char*argv[]) {
 
 		fclose(file_ptr);
 	}
-	
+
 	return 0;
 }
